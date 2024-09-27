@@ -11,8 +11,6 @@ export const UsersDispatchContext = createContext(null);
 
 export const UsersProvider = ({ children }) => {
   const [users, dispatch] = useReducer(usersReducers, []);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchUsers = async () => {
@@ -25,23 +23,15 @@ export const UsersProvider = ({ children }) => {
         dispatch({ type: "SET_USERS", payload: data.users }); 
       } catch (error) {
         console.error("Error fetching users:", error);
-        setError(error.message);
-      } finally {
-        setIsLoading(false);
-      }
+      } 
     };
 
     fetchUsers();
   }, []);
-  useEffect(() => {
-    console.log(users);
-  }, [users]);
 
   return (
     <UsersContext.Provider value={users}>
       <UsersDispatchContext.Provider value={dispatch}>
-        {isLoading && <p>Loading...</p>}
-        {error && <p style={{ color: "red" }}>{error}</p>}
         {children}
       </UsersDispatchContext.Provider>
     </UsersContext.Provider>
@@ -56,8 +46,6 @@ export const useUsersDipatch = () => {
 };
 
 const usersReducers = (users, action) => {
-  console.log("Action", action);
-  console.log(users);
   switch (action.type) {
     case "SET_USERS":
       return action.payload;
@@ -70,7 +58,7 @@ const usersReducers = (users, action) => {
           lastName: action.payload.lastName,
           email: action.payload.email,
           occupation: action.payload.occupation,
-          phone: action.payload.number,
+          phone: action.payload.phone,
           icon: action.payload.icon,
         },
       ];

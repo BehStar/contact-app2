@@ -7,7 +7,7 @@ import { useShowModal } from "../contexts/ShowModalContext";
 import styles from "./Modal.module.css";
 
 const Modal = ({ selectionGroup, setSelectionGroup }) => {
-  const { isShowModal, setIsShowModal, messageModal, status, setIsSelection } =
+  const { isShowModal, setIsShowModal, messageModal, status } =
     useShowModal();
   const dispatch = useUsersDipatch();
   const { setIsShowAlert, setMessageAlert } = useShowAlert();
@@ -35,7 +35,7 @@ const Modal = ({ selectionGroup, setSelectionGroup }) => {
     setIsShowModal(false);
     setIsShowAlert(true);
     setMessageAlert(`Some Users was deleted`);
-    setIsSelection(false);
+
   };
   return (
     <div

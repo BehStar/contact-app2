@@ -76,7 +76,6 @@ const UserList = () => {
       <Modal
         selectionGroup={selectionGroup}
         setSelectionGroup={setSelectionGroup}
-        setIsSelection={setIsSelection}
       />
       <ul
         className={`${isShowModal ? styles.hiddenWrapper : styles.showWrapper}`}

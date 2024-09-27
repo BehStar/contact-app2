@@ -16,13 +16,13 @@ import Alert from "./Alert.js";
 const AddUser = () => {
   const dispatch = useUsersDipatch();
   const users = useUsers();
-  const { user, setUser } = useUser();
+  const {  setUser } = useUser();
   const { isCreateAccount, setIsCreateAccount } = useCreateAccount();
-  const { editUser, setEditUser } = useEditUser();
+  const { editUser } = useEditUser();
   const { isShowAlert, setIsShowAlert, messageAlert, setMessageAlert } =
     useShowAlert();
 
-    const { isShowModal, setIsShowModal } = useShowModal();
+    const { isShowModal } = useShowModal();
   const [infoUser, setInfoUser] = useState({
     id: new Date().getTime(),
     firstName: "",
@@ -70,7 +70,6 @@ const AddUser = () => {
   // Submit Form Handler
   const submitFormHandler = async (e) => {
     e.preventDefault();
-    console.log(infoUser);
     if (isCreateAccount) {
       const validationErrors = validateUserInfo(infoUser);
 
@@ -90,14 +89,10 @@ const AddUser = () => {
           setMessageAlert("Your registration has been completed successfully");
         } catch (error) {
           console.error("There was a problem with the fetch operation:", error);
-        } finally {
-          console.log(users);
         }
       }
     } else {
-      if (!editUser) {
-        console.log("کاربر مورد نظر خود را انتخاب کنید...");
-      } else {
+      
         const validationErrors = validateUserInfo(infoUser);
 
         if (Object.keys(validationErrors).length > 0) {
@@ -113,7 +108,6 @@ const AddUser = () => {
           resetErrorMessages();
           setIsCreateAccount(true);
         }
-      }
     }
   };
 
@@ -154,7 +148,6 @@ const AddUser = () => {
           typeof infoUser["phone"] === "string" && // بررسی کنید که آیا این یک رشته است
           infoUser["phone"].length > 1
         ) {
-          console.log("phone");
           newErrorMessages[field] = `${label} is invalid`;
         } else if (field === "email") {
           newErrorMessages[field] = `${label} is invalid`;
