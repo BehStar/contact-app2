@@ -1,0 +1,137 @@
+.wrapper {
+  width: 20rem;
+  height: 20rem;
+  border: 4px solid rgba(30, 143, 255, 0.5);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+  border-radius: 30px;
+  /* position: absolute;
+  top: 0;
+  right: 0; */
+  overflow: hidden;
+  position: relative;
+  margin: 0 auto;
+}
+.profileImg {
+  width: 100%;
+  height: 16rem;
+  transition: 1s;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.profileSmallImg {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  z-index: 10;
+  overflow: hidden;
+  top: 1rem;
+  left: 1rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+  border: 4px solid rgba(30, 143, 255, 0.5);
+  transition: 1s;
+}
+.profileSmallImg:hover {
+  border-radius: 0;
+}
+.profileImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.info {
+  width: 100%;
+  height: 4rem;
+  padding: 0.5rem;
+  border-radius: 25px;
+  background: linear-gradient(rgba(30, 143, 255), rgba(0, 128, 0, 0.3));
+  position: absolute;
+  bottom: 0;
+  transition: 1s;
+}
+.infoRow {
+  width: 100%;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.infoRow p {
+  width: 50%;
+  color: lightgoldenrodyellow;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 1.1rem;
+}
+.showFullScreen {
+  height: 17rem;
+  border-top-left-radius: 100px;
+}
+.dontshowFullScreen {
+  height: 4rem;
+}
+.info button {
+  width: 8rem;
+  height: 2rem;
+  border-radius: 1rem;
+  color: dodgerblue;
+  background-color: #fff;
+}
+.details {
+  display: grid;
+  gap: 0.5rem;
+  margin-top: 4rem;
+  margin-left: 2rem;
+  color: white;
+  /* background-color: red; */
+  font-size: 0.9rem;
+}
+.btnsGroup {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: start;
+  align-items: center;
+}
+.btnsGroup button {
+  width: 6rem;
+  border: 1px solid dodgerblue;
+  background-color: dodgerblue;
+  color: white;
+  border-radius: 0.5rem;
+}
+.btnsGroup button:nth-child(2) {
+  background-color: brown;
+  color: white;
+  border: 1px solid brown;
+}
+.moreShowInfo {
+  transition: 1s;
+  visibility: visible;
+  opacity: 1;
+}
+.dontmoreShowInfo {
+  transition: 0.3s;
+  visibility: hidden;
+  opacity: 0;
+}
+.infoRow button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+}
+.icon {
+  transition: 1s;
+}
+.handDown {
+  transform: rotate(180deg);
+}
+@media screen and (max-width: 768px) {
+  .wrapper {
+    width: 100%;
+  }
+}

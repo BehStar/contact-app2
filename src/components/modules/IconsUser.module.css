@@ -1,0 +1,50 @@
+.wrapperIcons {
+    height: 5rem;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .wrapperIcons div {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .iconWrapper {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    display: block;
+    position: relative;
+    cursor: pointer;
+  }
+  .iconWrapper input {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+  }
+  .iconWrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    border-radius: 50%;
+    z-index: 10;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    border: 4px solid rgba(30, 143, 255, 0.5);
+    transition: 1s;
+  }
+  .iconWrapper img:hover {
+    border-radius: 0;
+    box-shadow: 5px 5px 10px darkgray;
+  }
+  .selectedIcon {
+    box-shadow: 5px 5px 10px dodgerblue;
+    transition: 0.3s;
+  }
+  .selectedIcon:hover {
+    border-radius: 0;
+    box-shadow: 5px 5px 10px dodgerblue;
+  }
+  

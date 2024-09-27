@@ -1,0 +1,126 @@
+.list {
+  width: 100%;
+  margin: 2rem 0;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/public/images/body-bg.png");
+  background-attachment: fixed;
+  border: 4px solid rgba(30, 143, 255, 0.3);
+  overflow: hidden;
+}
+.hiddenWrapper{
+  display: none!important;
+}
+.showWrapper{
+ display: block!important;
+}
+.list ul {
+  width: 100%;
+  transform-style: preserve-3d;
+  perspective: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0;
+  transition: 500ms;
+  transform: translateY(-200px);
+  justify-content: center;
+}
+
+.list ul:hover {
+  gap: 20px !important;
+  filter: blur(0);
+  margin-top: 0 !important;
+  padding: 1rem 0 !important;
+  transform: translateY(0) !important;
+}
+
+.list ul li {
+  width: 100%;
+  height: 96px;
+  padding: 16px;
+  position: relative;
+  list-style: none;
+  background: #fff;
+  border-radius: 10px;
+  border: 4px solid rgba(30, 143, 255, 0.401);
+  display: flex;
+  gap: 20px;
+  justify-content: flex-start;
+  align-items: center;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.24);
+  transition: 500ms;
+  transition-delay: calc(var(--i) * 50ms);
+  transform: translateZ(0) translateY(0);
+  opacity: 1;
+  filter: blur(0);
+}
+
+.list ul:hover li {
+  opacity: 1;
+  filter: blur(0) !important;
+  transform: translateZ(0) translateY(0) !important;
+}
+
+.list ul li:first-child {
+  margin-top: 140px;
+}
+.list ul li img {
+  max-width: 64px;
+  border-radius: 8px;
+}
+
+.list ul li .content {
+  width: 100%;
+}
+
+.list ul li .content h3 {
+  font-weight: 600;
+  margin-bottom: 6px;
+  line-height: 1;
+}
+
+.list ul li .content p {
+  opacity: 0.6;
+  line-height: 1;
+}
+.btnsGroup{
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 1rem;
+  align-items: center;
+}
+
+.btnsGroup button{
+width: 5rem;
+height: 2rem;
+font-size: 1rem;
+display: flex;
+justify-content: space-around;
+align-items: center;
+background-color: transparent;
+border: 1px solid lightblue;
+background-color: lightblue ;
+border-radius: 1rem;
+}
+.btns{
+  width: 100%;
+  height: 3rem;
+  margin-bottom: 1rem;
+display: flex;
+justify-content: space-between;
+}
+.btns button{
+  width: 4rem;
+  height: 100%;
+  border-radius: 0.3rem;
+  background-color: lightblue;
+  color: black;
+}
+.removeBtns{
+  display: flex;
+  gap: 0.5rem;
+}

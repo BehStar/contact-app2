@@ -1,0 +1,116 @@
+.container {
+  max-width: 1200px;
+  height: 5rem;
+  padding: 1rem;
+  margin: 0 auto;
+  border-radius: 20px;
+  background: linear-gradient(
+    45deg,
+    rgba(30, 143, 255, 0.795),
+    rgba(0, 0, 0, 0.701)
+  );
+  position: fixed;
+  top: 1rem;
+  right: 0.5rem;
+  left: 0.5rem;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.container::before {
+  /* یا .container::after */
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit; /* از پس‌زمینه والد استفاده کنید */
+  border-radius: inherit; /* از border-radius والد استفاده کنید */
+  filter: blur(5px);
+  z-index: -1; /* شبه عنصر را در پشت محتوا قرار دهید */
+}
+
+.container h2 {
+  position: relative; /* برای اطمینان از اینکه h2 در بالای شبه عنصر قرار می‌گیرد */
+}
+
+.searchWrapper {
+  width: 20rem;
+  height: auto;
+  /* position: absolute;
+  top: 0%;
+  left: 0%; */
+  /* transform: translate(-50%, -50%); */
+  /* background:linear-gradient(to right,dodgerblue,green); */
+  border-radius: 4rem;
+  padding: 0 10px;
+  position: relative;
+}
+
+.searchBox {
+  float: left;
+  width: 0;
+  height: 4rem;
+  background: none;
+  color: #f7f7f7;
+  font-size: 1rem;
+  border-radius: 2rem;
+  outline: none;
+  border: none;
+  position: relative;
+  opacity: 1;
+  transition: all 0.75s ease-in;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.searchIcon {
+  /* height: 100%; */
+  font-size: 2.5rem;
+  padding: 0 0.7rem;
+  margin: 0.8rem 0;
+  margin-left: 0.8rem;
+
+  cursor: pointer;
+  position: absolute;
+  color: #fa983a;
+  transition: all 0.25s ease-in;
+  border-radius: 50%;
+  z-index: 10000;
+}
+
+.searchWrapper:hover > .searchBox,
+.searchWrapper:focus > .searchBox {
+  width: 85%;
+  padding: 0 1rem;
+}
+
+.searchWrapper:hover > .searchIcon,
+.searchWrapper:focus > .searchBox {
+  background-color: #eee;
+  background-color: red;
+}
+
+.show {
+  width: 85%;
+  border: 1px solid red;
+}
+.searchBox:focus + .searchIcon {
+  right: 0.5rem; 
+}
+
+.searchWrapper:hover > .searchBox,
+.searchWrapper:focus-within > .searchBox { 
+  width: 85%;
+  padding: 0 1rem;
+}
+
+.searchWrapper:hover > .searchIcon,
+.searchWrapper:focus-within > .searchIcon {
+  background-color: #eee;
+}
