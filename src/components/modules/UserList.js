@@ -77,57 +77,65 @@ const UserList = () => {
         selectionGroup={selectionGroup}
         setSelectionGroup={setSelectionGroup}
       />
-      <ul
-        className={`${isShowModal ? styles.hiddenWrapper : styles.showWrapper}`}
-      >
-        <div className={styles.btns}>
-          <button onClick={ClearAllHandler}>Clear All</button>
-          {isSelection ? (
-            <div className={styles.removeBtns}>
-              <button onClick={deleteSomeUsers}>
-                <FaRegTrashAlt />
-              </button>
-              <button onClick={() => cancelRemoveHandler()}>X</button>
-            </div>
-          ) : (
-            <button onClick={() => setIsSelection(true)}>Remove Some</button>
-          )}
-        </div>
-        {users
-          .filter(
-            (user) =>
-              user.email.includes(search) ||
-              user.firstName.includes(search) ||
-              user.lastName.includes(search)
-          )
-          .map((user, index) => (
-            <li
-              key={user.id}
-              style={{
-                transform: calculateTransform(index),
-                filter: calculateBlur(index),
-              }}
-            >
-              <img src={`/images/${user.icon}.jpg`} alt="user image" />
-              <div className={styles.content}>
-                <h3>{user.firstName} {user?.lastName}</h3>
-                <p>{user.email}</p>
-              </div>
-              <div className={styles.btnsGroup}>
-                <button onClick={() => showMoreHandler(user)}>
-                  <MdOutlineMore />
+      {users.length > 0 ? (
+        <ul
+          className={`${
+            isShowModal ? styles.hiddenWrapper : styles.showWrapper
+          }`}
+        >
+          <div className={styles.btns}>
+            <button onClick={ClearAllHandler}>Clear All</button>
+            {isSelection ? (
+              <div className={styles.removeBtns}>
+                <button onClick={deleteSomeUsers}>
+                  <FaRegTrashAlt />
                 </button>
-                {isSelection && (
-                  <DeleteUserList
-                    user={user}
-                    setSelectionGroup={setSelectionGroup}
-                    selectionGroup={selectionGroup}
-                  />
-                )}
+                <button onClick={() => cancelRemoveHandler()}>X</button>
               </div>
-            </li>
-          ))}
-      </ul>
+            ) : (
+              <button onClick={() => setIsSelection(true)}>Remove Some</button>
+            )}
+          </div>
+          {users
+            .filter(
+              (user) =>
+                user.email.includes(search) ||
+                user.firstName.includes(search) ||
+                user.lastName.includes(search)
+            )
+            .map((user, index) => (
+              <li
+                key={user.id}
+                style={{
+                  transform: calculateTransform(index),
+                  filter: calculateBlur(index),
+                }}
+              >
+                <img src={`/images/${user.icon}.jpg`} alt="user image" />
+                <div className={styles.content}>
+                  <h3>
+                    {user.firstName} {user?.lastName}
+                  </h3>
+                  <p>{user.email}</p>
+                </div>
+                <div className={styles.btnsGroup}>
+                  <button onClick={() => showMoreHandler(user)}>
+                    <MdOutlineMore />
+                  </button>
+                  {isSelection && (
+                    <DeleteUserList
+                      user={user}
+                      setSelectionGroup={setSelectionGroup}
+                      selectionGroup={selectionGroup}
+                    />
+                  )}
+                </div>
+              </li>
+            ))}
+        </ul>
+      ) : (
+        <p className={styles.emptyUsers}>There is no Users</p>
+      )}
     </div>
   );
 };

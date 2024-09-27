@@ -113,7 +113,6 @@ const AddUser = () => {
 
   // Cancel Handler
   const cancelHandler = () => {
-    // setEditUser({});
     resetInfoUser();
     resetErrorMessages();
     if (editUser) {
@@ -277,7 +276,7 @@ const AddUser = () => {
 export default AddUser;
 
 const ToggleContainer = ({ isCreateAccount, setIsCreateAccount }) => {
-  const { editUser, setEditUser } = useEditUser();
+  const { editUser} = useEditUser();
   const toggleHandler = () => {
     setIsCreateAccount(!isCreateAccount);
     if (editUser.id && isCreateAccount) {

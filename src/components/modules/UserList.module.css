@@ -11,11 +11,11 @@
   border: 4px solid rgba(30, 143, 255, 0.3);
   overflow: hidden;
 }
-.hiddenWrapper{
-  display: none!important;
+.hiddenWrapper {
+  display: none !important;
 }
-.showWrapper{
- display: block!important;
+.showWrapper {
+  display: block !important;
 }
 .list ul {
   width: 100%;
@@ -87,40 +87,52 @@
   opacity: 0.6;
   line-height: 1;
 }
-.btnsGroup{
+.btnsGroup {
   display: flex;
   flex-direction: row-reverse;
   gap: 1rem;
   align-items: center;
 }
 
-.btnsGroup button{
-width: 5rem;
-height: 2rem;
-font-size: 1rem;
-display: flex;
-justify-content: space-around;
-align-items: center;
-background-color: transparent;
-border: 1px solid lightblue;
-background-color: lightblue ;
-border-radius: 1rem;
+.btnsGroup button {
+  width: 5rem;
+  height: 2rem;
+  font-size: 1rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: transparent;
+  border: 1px solid lightblue;
+  background-color: lightblue;
+  border-radius: 1rem;
 }
-.btns{
+.btns {
   width: 100%;
   height: 3rem;
   margin-bottom: 1rem;
-display: flex;
-justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
-.btns button{
+.btns button {
   width: 4rem;
   height: 100%;
   border-radius: 0.3rem;
   background-color: lightblue;
   color: black;
 }
-.removeBtns{
+.removeBtns {
   display: flex;
   gap: 0.5rem;
+}
+.emptyUsers {
+  width: 100%;
+  height: 5rem;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: rgb(108, 16, 16);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.375);
 }

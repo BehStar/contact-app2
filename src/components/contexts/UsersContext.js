@@ -1,10 +1,4 @@
-import React, {
-  useState,
-  useEffect,
-  createContext,
-  useContext,
-  useReducer,
-} from "react";
+import React, { useEffect, createContext, useContext, useReducer } from "react";
 
 export const UsersContext = createContext(null);
 export const UsersDispatchContext = createContext(null);
@@ -20,10 +14,10 @@ export const UsersProvider = ({ children }) => {
           throw new Error("Failed to fetch users data.");
         }
         const data = await response.json();
-        dispatch({ type: "SET_USERS", payload: data.users }); 
+        dispatch({ type: "SET_USERS", payload: data.users });
       } catch (error) {
         console.error("Error fetching users:", error);
-      } 
+      }
     };
 
     fetchUsers();
@@ -69,7 +63,7 @@ const usersReducers = (users, action) => {
       );
 
       if (updatedUserIndex !== -1) {
-        const updatedUsers = [...users]; 
+        const updatedUsers = [...users];
         updatedUsers[updatedUserIndex] = action.payload;
         return updatedUsers;
       } else {

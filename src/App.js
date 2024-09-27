@@ -36,7 +36,6 @@ const App = () => {
                           <AddUser />
                           <UserList />
                         </div>
-
                     </div>
                   </body>
                   </RefSearchProvider>
